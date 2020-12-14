@@ -1,0 +1,27 @@
+C51 COMPILER V9.01   STUDY                                                                 01/23/2019 18:02:02 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE STUDY
+OBJECT MODULE PLACED IN .\Objects\study.obj
+COMPILER INVOKED BY: B:\keil4\C51\BIN\C51.EXE study.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\study
+                    -.lst) TABS(2) OBJECT(.\Objects\study.obj)
+
+line level    source
+
+   1          
+   2          
+   3          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

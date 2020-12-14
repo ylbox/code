@@ -1,0 +1,52 @@
+C51 COMPILER V9.01   串口通信                                                              04/03/2019 17:27:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE 串口通信
+OBJECT MODULE PLACED IN .\Objects\串口通信.obj
+COMPILER INVOKED BY: C:\software\Keil\C51\BIN\C51.EXE 串口通信.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\串口通信.lst) OBJECT(.\Objects\串口通信.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          typedef unsigned int uint;
+   3          typedef unsigned char uchar;
+   4          
+   5          void main()
+   6          {
+   7   1         TMOD=0X20;   //0010 0000 工作方式2，8位自动重装载定时器
+   8   1         TH1=0XF3;    //用软件算出的值为0xf3，此时SMOD为1，波特率为4800，误差为0.16%，较精确
+   9   1         TL1=0XF3;
+  10   1      
+  11   1         PCON=0X80;    //SMOD为1
+  12   1         SCON=0X50;   //0101 0000 工作方式1，10位异步收发器，REN=1                            
+  13   1         EA=1;
+  14   1         ES=1;
+  15   1         TR1=1;               //没有ET1=1这条语句，原因现在T1就相当于是一个波特率发生器，不需要T1中断
+  16   1         while(1);
+  17   1      }
+  18          
+  19          void chuanhangkou() interrupt 4
+  20          {
+  21   1         uchar receieve_Date;
+  22   1         receieve_Date=SBUF;          //此处的SBUF是接收缓冲器，接收完一帧数据后，硬件置RI为1，需用软件清零
+  23   1         RI=0;
+  24   1      
+  25   1         SBUF=receieve_Date;            //此处的SBUF是发送缓冲器
+  26   1         while(!TI);
+  27   1         TI=0;
+  28   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     46    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

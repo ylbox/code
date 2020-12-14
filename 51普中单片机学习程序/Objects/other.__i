@@ -1,0 +1,1 @@
+"other.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\other.lst) TABS (2) OBJECT(.\Objects\other.obj)

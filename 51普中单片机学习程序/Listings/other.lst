@@ -1,0 +1,18 @@
+C51 COMPILER V9.01   OTHER                                                                 01/24/2019 17:42:31 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE OTHER
+OBJECT MODULE PLACED IN .\Objects\other.obj
+COMPILER INVOKED BY: B:\keil4\C51\BIN\C51.EXE other.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\other
+                    -.lst) TABS(2) OBJECT(.\Objects\other.obj)
+
+line level    source
+
+   1          #include <other.h>
+*** ERROR C129 IN LINE 11 OF LED.H: missing ';' before 'smgduan'
+   2          
+   3          
+   4          
+   5          
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
